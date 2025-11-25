@@ -92,12 +92,12 @@ export const BLOG_POSTS: BlogPost[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    label: 'Github',
+    label: 'GitHub',
     link: 'https://github.com/junaidanjum',
   },
   {
     label: 'Bluesky',
-    link: 'https://bsky.app/profile/junaidanjum.posts.cv',
+    link: 'https://bsky.app/profile/junqo.bsky.social',
   },
 ]
 
