@@ -83,6 +83,13 @@ export const BLOG_POSTS: BlogPost[] = [
     uid: 'blog-3',
   },
   {
+    title: 'What Actually is a Pull Request?',
+    description:
+      'A simple explanation of Pull Requests for beginners, and why the name is so confusing.',
+    link: '/blog/what-is-a-pull-request',
+    uid: 'blog-1',
+  },
+  {
     title: 'The endless loop of app development',
     description: 'How a simple app grows legs and arms and becomes a monster',
     link: '/blog/endless-loop',

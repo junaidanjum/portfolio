@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+// @ts-expect-error no types
 import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
@@ -14,7 +15,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Junqo',
   description:
-    'Free and open-source personal website built with Next.js 15, React 19 and Motion-Primitives.',
+    'Personal portfolio of Junaid Anjum, a front end developer specializing in React.js and modern web technologies.',
 }
 
 const geist = Geist({
