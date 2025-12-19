@@ -1,1 +1,1 @@
-export const WEBSITE_URL = 'https://junqo.vercel.app'
+export const WEBSITE_URL = 'https://winterstack.vercel.app'

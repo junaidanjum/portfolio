@@ -12,9 +12,9 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Junqo',
+  title: 'Junaid Anjum - Frontend Product Engineer',
   description:
-    'Personal portfolio of Junaid Anjum, a front end developer specializing in React.js and modern web technologies.',
+    'Building meaningful products end-to-end, focused on clarity, structure, and systems that age well.',
 }
 
 const geist = Geist({
