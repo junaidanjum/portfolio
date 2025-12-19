@@ -20,6 +20,7 @@ type BlogPost = {
   description: string
   link: string
   uid: string
+  type?: 'work' | 'personal'
 }
 
 type SocialLink = {
@@ -83,17 +84,26 @@ export const BLOG_POSTS: BlogPost[] = [
     uid: 'blog-3',
   },
   {
+    title: 'Books I read in 2025',
+    description: 'A list of books spanning various genres and topics.',
+    link: '/blog/books-in-2025',
+    uid: 'books-in-2025',
+    type: 'personal',
+  },
+  {
     title: 'What Actually is a Pull Request?',
     description:
       'A simple explanation of Pull Requests for beginners, and why the name is so confusing.',
     link: '/blog/what-is-a-pull-request',
     uid: 'blog-1',
+    type: 'work',
   },
   {
     title: 'The endless loop of app development',
     description: 'How a simple app grows legs and arms and becomes a monster',
     link: '/blog/endless-loop',
     uid: 'blog-2',
+    type: 'work',
   },
 ]
 

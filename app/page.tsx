@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'motion/react'
-import { XIcon } from 'lucide-react'
+import { Code, FileCode, FileHeart, XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import {
@@ -19,6 +19,8 @@ import {
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
+import { SegmentedFilter } from '@/components/tabs'
+import { useState } from 'react'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -125,6 +127,7 @@ function MagneticSocialLink({
 }
 
 export default function Personal() {
+  const [filter, setFilter] = useState<string>('all')
   return (
     <motion.main
       className="space-y-24"
@@ -138,9 +141,10 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Frontend designer and developer crafting simple, minimal, and
-            intuitive interfaces. Focused on aesthetics, usability, and seamless
-            interactions.
+            I build meaningful products end-to-end, focused on clarity,
+            structure, and systems that age well. I aim to create software that
+            feels intentional, not noisy. I enjoy owning ideas through
+            implementation and refinement.
           </p>
         </div>
       </motion.section>
@@ -216,7 +220,10 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Notes & More</h3>
+        <div className="mb-3 flex items-center justify-between">
+          <h3 className="text-lg font-medium">Notes & More</h3>
+          <SegmentedFilter filter={filter} setFilter={setFilter} />
+        </div>
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
             enableHover
@@ -227,7 +234,10 @@ export default function Personal() {
               duration: 0.2,
             }}
           >
-            {BLOG_POSTS.map((post) => (
+            {BLOG_POSTS.filter((a) => {
+              if (filter === 'all') return true
+              return a.type === filter
+            }).map((post) => (
               <Link
                 key={post.uid}
                 className="-mx-3 rounded-xl px-3 py-3"
@@ -236,7 +246,16 @@ export default function Personal() {
               >
                 <div className="flex flex-col space-y-1">
                   <h4 className="font-normal dark:text-zinc-100">
-                    {post.title}
+                    <span>{post.title}</span>
+                    <span className="ml-2">
+                      {post.type === 'work' ? (
+                        <FileCode className="inline h-4 w-4 text-blue-400" />
+                      ) : post.type === 'personal' ? (
+                        <FileHeart className="inline h-4 w-4 text-amber-400" />
+                      ) : (
+                        ''
+                      )}
+                    </span>
                   </h4>
                   <p className="text-zinc-500 dark:text-zinc-400">
                     {post.description}
